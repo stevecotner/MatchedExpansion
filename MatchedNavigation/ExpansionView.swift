@@ -79,7 +79,7 @@ struct ExpansionView<Content>: View where Content: View {
     func addTypeErasedViewMaker(_ viewMaker: TypeErasedExpansionLinkViewMaker) {
         expander.viewMakers.append(viewMaker)
         
-        withAnimation(.interpolatingSpring(mass: 0.039, stiffness: 2.75, damping: 0.55, initialVelocity: 0.1)) {
+        withAnimation(.expandAnimation) {
             expander.objectWillChange.send()
         }
     }
@@ -162,5 +162,9 @@ struct ExpansionView_Previews: PreviewProvider {
 extension Animation {
     static var collapseAnimation: Self {
         interpolatingSpring(mass: 0.039, stiffness: 4.5, damping: 0.95, initialVelocity: 0.1)
+    }
+    
+    static var expandAnimation: Self {
+        .interpolatingSpring(mass: 0.039, stiffness: 2.75, damping: 0.55, initialVelocity: 0.1)
     }
 }
