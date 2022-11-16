@@ -21,10 +21,10 @@ struct CollapsedCardDeck<Item: CardItem, CardContent>: View where CardContent: V
             VStack(alignment: .leading) {
                 HStack {
                     Text(title)
+                        .matchedGeometryEffect(id: id + "CardDeckTitle\(title)", in: namespace)
                         .font(.title2).bold()
                     Spacer(minLength: 0)
                 }
-                    .matchedGeometryEffect(id: id + "CardDeckTitle\(title)", in: namespace)
                 
                 Button {
                     tapAction()

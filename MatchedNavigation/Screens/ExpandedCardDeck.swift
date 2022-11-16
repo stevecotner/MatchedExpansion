@@ -26,10 +26,10 @@ struct ExpandedCardDeck<Item: CardItem, CardContent>: View where CardContent: Vi
                     
                     HStack {
                         Text(title)
+                            .matchedGeometryEffect(id: id + "CardDeckTitle\(title)", in: namespace)
                             .font(.title2).bold()
                         Spacer(minLength: 0)
                     }
-                        .matchedGeometryEffect(id: id + "CardDeckTitle\(title)", in: namespace)
                         .padding(.horizontal, 20)
                     
                     ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
