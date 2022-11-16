@@ -14,6 +14,29 @@
 		87A2321729234CCD00B5EC64 /* MatchedNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2321629234CCD00B5EC64 /* MatchedNavigationTests.swift */; };
 		87A2322129234CCD00B5EC64 /* MatchedNavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2322029234CCD00B5EC64 /* MatchedNavigationUITests.swift */; };
 		87A2322329234CCD00B5EC64 /* MatchedNavigationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2322229234CCD00B5EC64 /* MatchedNavigationUITestsLaunchTests.swift */; };
+		87A2323029234DC800B5EC64 /* ListOfCardDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2322F29234DC800B5EC64 /* ListOfCardDecks.swift */; };
+		87A232322923535500B5EC64 /* ExpansionLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232312923535500B5EC64 /* ExpansionLink.swift */; };
+		87A23234292358E700B5EC64 /* ExpansionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A23233292358E700B5EC64 /* ExpansionView.swift */; };
+		87A2323629236D9C00B5EC64 /* HowdyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2323529236D9C00B5EC64 /* HowdyView.swift */; };
+		87A2323829236E3500B5EC64 /* ExpansionNamespaceReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2323729236E3500B5EC64 /* ExpansionNamespaceReader.swift */; };
+		87A2323A292374E600B5EC64 /* TransitionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A23239292374E600B5EC64 /* TransitionWrapper.swift */; };
+		87A2323D2923893000B5EC64 /* GreetingsDeck.Collapsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2323C2923893000B5EC64 /* GreetingsDeck.Collapsed.swift */; };
+		87A232412923894300B5EC64 /* FarewellsDeck.Expanded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232402923894300B5EC64 /* FarewellsDeck.Expanded.swift */; };
+		87A232452923896C00B5EC64 /* CollapsedCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232442923896C00B5EC64 /* CollapsedCardDeck.swift */; };
+		87A2324729238B5700B5EC64 /* ExpandedCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2324629238B5700B5EC64 /* ExpandedCardDeck.swift */; };
+		87A2324A29238CF600B5EC64 /* GreetingsDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2324929238CF600B5EC64 /* GreetingsDeck.swift */; };
+		87A2324C29238FAB00B5EC64 /* SimpleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2324B29238FAB00B5EC64 /* SimpleCard.swift */; };
+		87A2324E292393A400B5EC64 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2324D292393A400B5EC64 /* CardItem.swift */; };
+		87A232502923972D00B5EC64 /* DummyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2324F2923972D00B5EC64 /* DummyCard.swift */; };
+		87A2325229239BE500B5EC64 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2325129239BE500B5EC64 /* Card.swift */; };
+		87A232542924065900B5EC64 /* GreetingCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232532924065900B5EC64 /* GreetingCardContent.swift */; };
+		87A232562924095600B5EC64 /* BouncyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232552924095600B5EC64 /* BouncyButtonStyle.swift */; };
+		87A2325A2924117D00B5EC64 /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232592924117D00B5EC64 /* Greeting.swift */; };
+		87A2325C2924118E00B5EC64 /* Farewell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2325B2924118E00B5EC64 /* Farewell.swift */; };
+		87A2325E292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2325D292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift */; };
+		87A232602924120E00B5EC64 /* GreetingsDeck.Expanded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2325F2924120E00B5EC64 /* GreetingsDeck.Expanded.swift */; };
+		87A232612924125600B5EC64 /* FarewellsDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232582924117100B5EC64 /* FarewellsDeck.swift */; };
+		87A232632924125F00B5EC64 /* FarewellCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232622924125F00B5EC64 /* FarewellCardContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +67,29 @@
 		87A2321C29234CCD00B5EC64 /* MatchedNavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchedNavigationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A2322029234CCD00B5EC64 /* MatchedNavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedNavigationUITests.swift; sourceTree = "<group>"; };
 		87A2322229234CCD00B5EC64 /* MatchedNavigationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedNavigationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		87A2322F29234DC800B5EC64 /* ListOfCardDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCardDecks.swift; sourceTree = "<group>"; };
+		87A232312923535500B5EC64 /* ExpansionLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionLink.swift; sourceTree = "<group>"; };
+		87A23233292358E700B5EC64 /* ExpansionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionView.swift; sourceTree = "<group>"; };
+		87A2323529236D9C00B5EC64 /* HowdyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowdyView.swift; sourceTree = "<group>"; };
+		87A2323729236E3500B5EC64 /* ExpansionNamespaceReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionNamespaceReader.swift; sourceTree = "<group>"; };
+		87A23239292374E600B5EC64 /* TransitionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionWrapper.swift; sourceTree = "<group>"; };
+		87A2323C2923893000B5EC64 /* GreetingsDeck.Collapsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingsDeck.Collapsed.swift; sourceTree = "<group>"; };
+		87A232402923894300B5EC64 /* FarewellsDeck.Expanded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FarewellsDeck.Expanded.swift; path = ../GreetingsDeck/FarewellsDeck.Expanded.swift; sourceTree = "<group>"; };
+		87A232442923896C00B5EC64 /* CollapsedCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedCardDeck.swift; sourceTree = "<group>"; };
+		87A2324629238B5700B5EC64 /* ExpandedCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCardDeck.swift; sourceTree = "<group>"; };
+		87A2324929238CF600B5EC64 /* GreetingsDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingsDeck.swift; sourceTree = "<group>"; };
+		87A2324B29238FAB00B5EC64 /* SimpleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCard.swift; sourceTree = "<group>"; };
+		87A2324D292393A400B5EC64 /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
+		87A2324F2923972D00B5EC64 /* DummyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyCard.swift; sourceTree = "<group>"; };
+		87A2325129239BE500B5EC64 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		87A232532924065900B5EC64 /* GreetingCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingCardContent.swift; sourceTree = "<group>"; };
+		87A232552924095600B5EC64 /* BouncyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyButtonStyle.swift; sourceTree = "<group>"; };
+		87A232582924117100B5EC64 /* FarewellsDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellsDeck.swift; sourceTree = "<group>"; };
+		87A232592924117D00B5EC64 /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
+		87A2325B2924118E00B5EC64 /* Farewell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farewell.swift; sourceTree = "<group>"; };
+		87A2325D292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellsDeck.Collapsed.swift; sourceTree = "<group>"; };
+		87A2325F2924120E00B5EC64 /* GreetingsDeck.Expanded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GreetingsDeck.Expanded.swift; path = ../FarewellsDeck/GreetingsDeck.Expanded.swift; sourceTree = "<group>"; };
+		87A232622924125F00B5EC64 /* FarewellCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellCardContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +142,11 @@
 			children = (
 				87A2320529234CC500B5EC64 /* MatchedNavigationApp.swift */,
 				87A2320729234CC500B5EC64 /* ContentView.swift */,
+				87A23233292358E700B5EC64 /* ExpansionView.swift */,
+				87A2323729236E3500B5EC64 /* ExpansionNamespaceReader.swift */,
+				87A23239292374E600B5EC64 /* TransitionWrapper.swift */,
+				87A232312923535500B5EC64 /* ExpansionLink.swift */,
+				87A2323B2923876500B5EC64 /* Screens */,
 				87A2320929234CCC00B5EC64 /* Assets.xcassets */,
 				87A2320B29234CCC00B5EC64 /* Preview Content */,
 			);
@@ -125,6 +176,48 @@
 				87A2322229234CCD00B5EC64 /* MatchedNavigationUITestsLaunchTests.swift */,
 			);
 			path = MatchedNavigationUITests;
+			sourceTree = "<group>";
+		};
+		87A2323B2923876500B5EC64 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				87A2322F29234DC800B5EC64 /* ListOfCardDecks.swift */,
+				87A2324829238CE800B5EC64 /* GreetingsDeck */,
+				87A232572924114700B5EC64 /* FarewellsDeck */,
+				87A232442923896C00B5EC64 /* CollapsedCardDeck.swift */,
+				87A2324629238B5700B5EC64 /* ExpandedCardDeck.swift */,
+				87A2324B29238FAB00B5EC64 /* SimpleCard.swift */,
+				87A2325129239BE500B5EC64 /* Card.swift */,
+				87A232552924095600B5EC64 /* BouncyButtonStyle.swift */,
+				87A2324F2923972D00B5EC64 /* DummyCard.swift */,
+				87A2324D292393A400B5EC64 /* CardItem.swift */,
+				87A2323529236D9C00B5EC64 /* HowdyView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		87A2324829238CE800B5EC64 /* GreetingsDeck */ = {
+			isa = PBXGroup;
+			children = (
+				87A232592924117D00B5EC64 /* Greeting.swift */,
+				87A2324929238CF600B5EC64 /* GreetingsDeck.swift */,
+				87A2323C2923893000B5EC64 /* GreetingsDeck.Collapsed.swift */,
+				87A2325F2924120E00B5EC64 /* GreetingsDeck.Expanded.swift */,
+				87A232532924065900B5EC64 /* GreetingCardContent.swift */,
+			);
+			path = GreetingsDeck;
+			sourceTree = "<group>";
+		};
+		87A232572924114700B5EC64 /* FarewellsDeck */ = {
+			isa = PBXGroup;
+			children = (
+				87A2325B2924118E00B5EC64 /* Farewell.swift */,
+				87A232582924117100B5EC64 /* FarewellsDeck.swift */,
+				87A2325D292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift */,
+				87A232402923894300B5EC64 /* FarewellsDeck.Expanded.swift */,
+				87A232622924125F00B5EC64 /* FarewellCardContent.swift */,
+			);
+			path = FarewellsDeck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +350,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A2325C2924118E00B5EC64 /* Farewell.swift in Sources */,
+				87A2324A29238CF600B5EC64 /* GreetingsDeck.swift in Sources */,
+				87A2323A292374E600B5EC64 /* TransitionWrapper.swift in Sources */,
+				87A2324E292393A400B5EC64 /* CardItem.swift in Sources */,
 				87A2320829234CC500B5EC64 /* ContentView.swift in Sources */,
+				87A2324729238B5700B5EC64 /* ExpandedCardDeck.swift in Sources */,
+				87A2323D2923893000B5EC64 /* GreetingsDeck.Collapsed.swift in Sources */,
+				87A232322923535500B5EC64 /* ExpansionLink.swift in Sources */,
+				87A232452923896C00B5EC64 /* CollapsedCardDeck.swift in Sources */,
+				87A2325229239BE500B5EC64 /* Card.swift in Sources */,
 				87A2320629234CC500B5EC64 /* MatchedNavigationApp.swift in Sources */,
+				87A232412923894300B5EC64 /* FarewellsDeck.Expanded.swift in Sources */,
+				87A2325E292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift in Sources */,
+				87A2324C29238FAB00B5EC64 /* SimpleCard.swift in Sources */,
+				87A2323029234DC800B5EC64 /* ListOfCardDecks.swift in Sources */,
+				87A23234292358E700B5EC64 /* ExpansionView.swift in Sources */,
+				87A232632924125F00B5EC64 /* FarewellCardContent.swift in Sources */,
+				87A2323829236E3500B5EC64 /* ExpansionNamespaceReader.swift in Sources */,
+				87A2323629236D9C00B5EC64 /* HowdyView.swift in Sources */,
+				87A232612924125600B5EC64 /* FarewellsDeck.swift in Sources */,
+				87A232542924065900B5EC64 /* GreetingCardContent.swift in Sources */,
+				87A232602924120E00B5EC64 /* GreetingsDeck.Expanded.swift in Sources */,
+				87A232502923972D00B5EC64 /* DummyCard.swift in Sources */,
+				87A2325A2924117D00B5EC64 /* Greeting.swift in Sources */,
+				87A232562924095600B5EC64 /* BouncyButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var expand = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ExpansionView { _ in
+            ListOfCardDecks()
         }
-        .padding()
     }
 }
 
