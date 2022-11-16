@@ -28,9 +28,7 @@ struct CollapsedCardDeck<Item: CardItem, CardContent>: View where CardContent: V
                 }
                 
                 Button {
-                    withAnimation(Animation.expandAnimation) {
-                        tapAction()
-                    }
+                    tapAction()
                 } label: {
                     cards()
                         .accessibilityElement(children: .ignore)
