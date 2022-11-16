@@ -10,11 +10,11 @@ import SwiftUI
 struct ExpandedCardDeck<Item: CardItem, CardContent>: View where CardContent: View {
     /// Used for matchedGeometryEffect
     let id: String
-    let transitionWrapperIDPrefix: String
     
     let title: String
     let items: [Item]
     let cardTapAction: (Item) -> Void
+    let cardTransitionWrapperIDPrefix: String
     let cardContent: (Item) -> CardContent
     
     var body: some View {
@@ -35,7 +35,9 @@ struct ExpandedCardDeck<Item: CardItem, CardContent>: View where CardContent: Vi
                     ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
                         // Each card is in a transition wrapper,
                         // Because each card will be able to expand to yet another view.
-                        TransitionWrapper(id: transitionWrapperIDPrefix + item.id) {
+                        // So we need to remove this view from the hierarchy when its mate is expanded.
+                        // (That's what TransitionWrappers are for!)
+                        TransitionWrapper(id: cardTransitionWrapperIDPrefix + item.id) {
                             Button {
                                 cardTapAction(item)
                             } label: {
@@ -67,10 +69,10 @@ struct ExpandedCardDeck_Previews: PreviewProvider {
     static var previews: some View {
         ExpandedCardDeck(
             id: "Deck",
-            transitionWrapperIDPrefix: "",
             title: "Deck",
             items: items,
             cardTapAction: { _ in },
+            cardTransitionWrapperIDPrefix: "",
             cardContent: { item in
                 Text(item.title)
             }

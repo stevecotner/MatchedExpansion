@@ -17,12 +17,10 @@ extension FarewellsDeck {
             ZStack {
                 ExpandedCardDeck(
                     id: "Farewells",
-                    transitionWrapperIDPrefix: "FarewellsExpandedItem",
                     title: "Farewells",
                     items: items,
-                    cardTapAction: { item in
-                        itemToExpand = item
-                    },
+                    cardTapAction: { itemToExpand = $0 },
+                    cardTransitionWrapperIDPrefix: "FarewellsExpandedItem",
                     cardContent: { farewell in
                         /*
                          Every card can expand to show another screen

@@ -14,10 +14,10 @@ extension GreetingsDeck {
         var body: some View {
             ExpandedCardDeck(
                 id: "Greetings",
-                transitionWrapperIDPrefix: "", // TODO
                 title: "Greetings",
                 items: items,
                 cardTapAction: { _ in }, // TODO
+                cardTransitionWrapperIDPrefix: "", // TODO (if we want to transition another level deep)
                 cardContent: { greeting in
                     GreetingCardContent(greeting: greeting)
                 }
