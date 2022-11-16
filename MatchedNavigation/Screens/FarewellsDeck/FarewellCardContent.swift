@@ -15,12 +15,15 @@ struct FarewellCardContent: View {
             VStack(alignment: .leading) {
                 HStack {
                     Text(farewell.title).bold()
-                        .fixedSize(horizontal: false, vertical: true)
+//                        .fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 0)
                 }
                 .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
                 
-                Text(farewell.description)
+                HStack {
+                    Text(farewell.description)
+                    Spacer(minLength: 0)
+                }
                     .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
             }
             .matchedGeometryEffect(id: "farewells" + "cardcontent" + farewell.id, in: namespace)

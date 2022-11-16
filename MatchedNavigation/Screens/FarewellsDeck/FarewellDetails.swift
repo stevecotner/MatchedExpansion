@@ -12,33 +12,36 @@ struct FarewellDetails: View {
     let collapseAction: () -> Void
     
     @State var shouldShowDetails = false
+    let titleFontSize: CGFloat = 28.0
+    let subtitleFontSize: CGFloat = 22.0
     
     var body: some View {
         ExpansionNamespaceReader { namespace in
             ScrollView {
                 VStack(alignment: .leading) {
-                    Spacer()
-                        .frame(height: 10)
-                    
                     HStack {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 5) {
                             HStack {
                                 Text(farewell.title).bold()
-                                    .fixedSize(horizontal: false, vertical: true)
+
                                 Spacer(minLength: 0)
                             }
                             .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
-                            .font(.title).bold()
-                            .padding(.bottom, 4)
+                            .font(.system(size: titleFontSize))
                             
-                            Text(farewell.description)
-                                .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
+                            HStack {
+                                Text(farewell.description)
+                                Spacer(minLength: 0)
+                            }
+                            .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
+                            .font(.system(size: subtitleFontSize))
                         }
                         
                         Spacer()
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom, 12)
+                    .padding(.top, 15)
                     
                     details()
                         .padding(.horizontal, 20)
@@ -51,7 +54,8 @@ struct FarewellDetails: View {
             .frame(maxHeight: .infinity)
             .safeAreaInset(edge: .bottom, content: {
                 Button {
-                    print("about to call collapse action...")
+                    shouldShowDetails = false
+                    
                     collapseAction()
                 } label: {
                     Text("Done")
@@ -66,24 +70,26 @@ struct FarewellDetails: View {
                     .matchedGeometryEffect(id: "Farewells" + farewell.id + "card" + "background", in: namespace)
             )
             .onAppear {
-                withAnimation(.easeIn.delay(0.5)) {
-                    shouldShowDetails = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
+                    withAnimation(.easeIn) {
+                        shouldShowDetails = true
+                    }
                 }
             }
+            
         }
     }
     
     func details() -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            Divider()
-                .padding(.bottom, 12)
-            Text("Details").bold()
-                .padding(.bottom, 4)
-            Text(farewell.details)
-            
-            Spacer()
+            if shouldShowDetails {
+                Divider()
+                    .padding(.bottom, 12)
+                Text("Details").bold()
+                    .padding(.bottom, 4)
+                Text(farewell.details)
+            }
         }
-        .opacity(shouldShowDetails ? 1 : 0.001)
     }
 }
 
