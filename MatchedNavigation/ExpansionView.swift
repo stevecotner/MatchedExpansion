@@ -10,10 +10,7 @@ import SwiftUI
 struct ExpansionView<Content>: View where Content: View {
     var content: (Namespace.ID) -> Content
     
-//    @State private var viewMakers: [TypeErasedExpansionLinkViewMaker] = []
-    
-    @StateObject var expander = Expander()
-    
+    @StateObject private var expander = Expander()
     @Namespace var namespace
     
     var body: some View {
@@ -26,12 +23,11 @@ struct ExpansionView<Content>: View where Content: View {
                             -geometry.size.height :
                             0)
                 
-                // TODO: consider iterating over range of count, not actual viewMakers.
                 ForEach(Array(expander.viewMakers.enumerated()), id: \.element.id) { index, viewMaker in
                     ZStack(alignment: .top) {
                         viewMaker.content()
                         
-                        if viewMaker.showsX {
+                        if viewMaker.showsXButton {
                             VStack {
                                 HStack {
                                     Spacer()
@@ -57,8 +53,6 @@ struct ExpansionView<Content>: View where Content: View {
                                 && expander.viewMakers[index + 1].transition.isSplit == true ?
                                 geometry.size.height * 2 : geometry.size.height
                         )
-//                        height: geometry.size.height
-//                        )
                     .offset(
                         y: index < expander.viewMakers.count - 1
                         && expander.viewMakers.count > index + 1
@@ -68,87 +62,15 @@ struct ExpansionView<Content>: View where Content: View {
             }
             .environmentObject(expander)
             .onAppear() {
-                expander.add = addTypeErasedViewMaker
-                expander.remove = removeTypeErasedViewMaker
                 expander.namespace = namespace
                 expander.totalHeight = geometry.size.height
             }
         }
     }
     
-    func addTypeErasedViewMaker(_ viewMaker: TypeErasedExpansionLinkViewMaker) {
-        expander.viewMakers.append(viewMaker)
-        
-        withAnimation(.expandAnimation) {
-            expander.objectWillChange.send()
-        }
-    }
-    
-    func removeTypeErasedViewMaker(_ id: String) {
-        expander.viewMakers.removeAll(where: { $0.id == id })
-        
-        withAnimation(.collapseAnimation) {
-            expander.objectWillChange.send()
-        }
-    }
-    
     func removeAndResetActive(_ viewMaker: TypeErasedExpansionLinkViewMaker) {
         viewMaker.resetActive()
-        expander.viewMakers.removeAll(where: { $0.id == viewMaker.id })
-        
-        withAnimation(.collapseAnimation) {
-            expander.objectWillChange.send()
-        }
-    }
-}
-
-struct ExpansionLinkViewMaker<Content> where Content: View {
-    var id: String
-    var transitionWrapperID: String
-    let showsX: Bool
-    let transition: ExpansionTransition
-    var resetActive: () -> Void
-    var content: () -> Content
-    var typeErasedViewMaker: TypeErasedExpansionLinkViewMaker {
-        let anyfiedContent = { AnyView(content()) }
-        return TypeErasedExpansionLinkViewMaker(
-            id: id,
-            transitionWrapperID: transitionWrapperID,
-            showsX: showsX,
-            transition: transition,
-            resetActive: resetActive,
-            content: anyfiedContent
-        )
-    }
-}
-
-struct TypeErasedExpansionLinkViewMaker {
-    var id: String
-    var transitionWrapperID: String
-    let showsX: Bool
-    let transition: ExpansionTransition
-    var resetActive: () -> Void
-    var content: () -> AnyView
-}
-
-class Expander: ObservableObject {
-    var add: ((TypeErasedExpansionLinkViewMaker) -> Void)?
-    var remove: ((String) -> Void)?
-    var namespace: Namespace.ID?
-    var totalHeight: CGFloat?
-    var viewMakers: [TypeErasedExpansionLinkViewMaker] = []
-    
-    var activeTransitionWrapperIDs: [String] {
-        return viewMakers.compactMap {
-            return $0.transitionWrapperID
-        }
-    }
-    
-    var activeSplitTransitionWrapperIDs: [String] {
-        return viewMakers.compactMap {
-            if $0.transition == .split { return $0.transitionWrapperID }
-            return nil
-        }
+        expander.remove(viewMaker.id)
     }
 }
 

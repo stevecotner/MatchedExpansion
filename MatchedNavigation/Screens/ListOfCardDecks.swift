@@ -20,16 +20,56 @@ struct ListOfCardDecks: View {
     ]
     
     @State var farewells: [Farewell] = [
-        Farewell(title: "Goodbye", description: "A formal farewell."),
-        Farewell(title: "Bye", description: "A somewhat casual farewell."),
-        Farewell(title: "See ya", description: "A very casual farewell."),
-        Farewell(title: "Peace", description: "A too casual farewell."),
-        Farewell(title: "Adios", description: "A Spanish farewell."),
-        Farewell(title: "Ciao", description: "An Italian farewell."),
-        Farewell(title: "Aloha", description: "A Hawaiian farewell."),
-        Farewell(title: "Hasta la vista, baby", description: "A Terminator farewell."),
-        Farewell(title: "Yippee Ki-Yay", description: "A Die Hard farewell."),
-        Farewell(title: "Allons-y", description: "A Dr. Who farewell.")
+        Farewell(
+            title: "Goodbye",
+            description: "A formal farewell.",
+            details: "Used to express good wishes when parting or at the end of a conversation"
+        ),
+        Farewell(
+            title: "Bye",
+            description: "A somewhat casual farewell.",
+            details: "Short for goodbye"
+        ),
+        Farewell(
+            title: "See ya",
+            description: "A very casual farewell.",
+            details: "Said when parting from someone"
+        ),
+        Farewell(
+            title: "Peace",
+            description: "A too casual farewell.",
+            details: "Used to express good wishes on parting"
+        ),
+        Farewell(
+            title: "Adiós",
+            description: "A Spanish farewell.",
+            details: "Spanish adiós, from a ‘to’ + Dios ‘God’; compare with adieu."
+        ),
+        Farewell(
+            title: "Ciao",
+            description: "An Italian farewell.",
+            details: "Italian, dialect alteration of schiavo ‘(I am your) slave’, from medieval Latin sclavus ‘slave’."
+        ),
+        Farewell(
+            title: "Aloha",
+            description: "A Hawaiian farewell.",
+            details: "A Hawaiian word used when greeting or parting from someone"
+        ),
+        Farewell(
+            title: "Hasta la vista, baby",
+            description: "A Terminator farewell.",
+            details: "Said by Arnold Schwarzenegger's character The Terminator"
+        ),
+        Farewell(
+            title: "Yippee Ki-Yay",
+            description: "A Die Hard farewell.",
+            details: "Said by Bruce Willis's character John McClane"
+        ),
+        Farewell(
+            title: "Allons-y",
+            description: "A Dr. Who farewell.",
+            details: "Said by the tenth Dr. Who, played by David Tennant"
+        )
     ]
     
     var body: some View {
@@ -81,7 +121,7 @@ struct ListOfCardDecks: View {
                     transitionWrapperID: "greetingsdeck",
                     isActive: $isGreetingsDeckExpanded,
                     transition: .split,
-                    destination: {
+                    destination: { _ in
                         GreetingsDeck.Expanded(items: greetings)
                     }
                 )
@@ -91,7 +131,7 @@ struct ListOfCardDecks: View {
                     transitionWrapperID: "farewellsdeck",
                     isActive: $isFarewellsDeckExpanded,
                     transition: .split,
-                    destination: {
+                    destination: { _ in
                         FarewellsDeck.Expanded(items: farewells)
                     }
                 )

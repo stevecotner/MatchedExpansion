@@ -38,6 +38,9 @@
 		87A232612924125600B5EC64 /* FarewellsDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232582924117100B5EC64 /* FarewellsDeck.swift */; };
 		87A232632924125F00B5EC64 /* FarewellCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232622924125F00B5EC64 /* FarewellCardContent.swift */; };
 		87A23265292544EA00B5EC64 /* FarewellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A23264292544EA00B5EC64 /* FarewellDetails.swift */; };
+		87A232672925799B00B5EC64 /* PillButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232662925799B00B5EC64 /* PillButtonStyle.swift */; };
+		87A2326929257CB000B5EC64 /* Expander.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2326829257CB000B5EC64 /* Expander.swift */; };
+		87A2326B29257CCB00B5EC64 /* ExpansionLinkViewMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2326A29257CCB00B5EC64 /* ExpansionLinkViewMaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +95,9 @@
 		87A2325F2924120E00B5EC64 /* GreetingsDeck.Expanded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GreetingsDeck.Expanded.swift; path = ../FarewellsDeck/GreetingsDeck.Expanded.swift; sourceTree = "<group>"; };
 		87A232622924125F00B5EC64 /* FarewellCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellCardContent.swift; sourceTree = "<group>"; };
 		87A23264292544EA00B5EC64 /* FarewellDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellDetails.swift; sourceTree = "<group>"; };
+		87A232662925799B00B5EC64 /* PillButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButtonStyle.swift; sourceTree = "<group>"; };
+		87A2326829257CB000B5EC64 /* Expander.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expander.swift; sourceTree = "<group>"; };
+		87A2326A29257CCB00B5EC64 /* ExpansionLinkViewMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionLinkViewMaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,8 @@
 				87A2320529234CC500B5EC64 /* MatchedNavigationApp.swift */,
 				87A2320729234CC500B5EC64 /* ContentView.swift */,
 				87A23233292358E700B5EC64 /* ExpansionView.swift */,
+				87A2326A29257CCB00B5EC64 /* ExpansionLinkViewMaker.swift */,
+				87A2326829257CB000B5EC64 /* Expander.swift */,
 				87A2323729236E3500B5EC64 /* ExpansionNamespaceReader.swift */,
 				87A23239292374E600B5EC64 /* TransitionWrapper.swift */,
 				87A232312923535500B5EC64 /* ExpansionLink.swift */,
@@ -191,6 +199,7 @@
 				87A2324B29238FAB00B5EC64 /* SimpleCard.swift */,
 				87A2325129239BE500B5EC64 /* Card.swift */,
 				87A232552924095600B5EC64 /* BouncyButtonStyle.swift */,
+				87A232662925799B00B5EC64 /* PillButtonStyle.swift */,
 				87A2324F2923972D00B5EC64 /* DummyCard.swift */,
 				87A2324D292393A400B5EC64 /* CardItem.swift */,
 				87A2323529236D9C00B5EC64 /* HowdyView.swift */,
@@ -359,6 +368,7 @@
 				87A2324E292393A400B5EC64 /* CardItem.swift in Sources */,
 				87A2320829234CC500B5EC64 /* ContentView.swift in Sources */,
 				87A2324729238B5700B5EC64 /* ExpandedCardDeck.swift in Sources */,
+				87A2326B29257CCB00B5EC64 /* ExpansionLinkViewMaker.swift in Sources */,
 				87A2323D2923893000B5EC64 /* GreetingsDeck.Collapsed.swift in Sources */,
 				87A232322923535500B5EC64 /* ExpansionLink.swift in Sources */,
 				87A232452923896C00B5EC64 /* CollapsedCardDeck.swift in Sources */,
@@ -369,6 +379,7 @@
 				87A2325E292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift in Sources */,
 				87A2324C29238FAB00B5EC64 /* SimpleCard.swift in Sources */,
 				87A2323029234DC800B5EC64 /* ListOfCardDecks.swift in Sources */,
+				87A232672925799B00B5EC64 /* PillButtonStyle.swift in Sources */,
 				87A23234292358E700B5EC64 /* ExpansionView.swift in Sources */,
 				87A232632924125F00B5EC64 /* FarewellCardContent.swift in Sources */,
 				87A2323829236E3500B5EC64 /* ExpansionNamespaceReader.swift in Sources */,
@@ -376,6 +387,7 @@
 				87A232612924125600B5EC64 /* FarewellsDeck.swift in Sources */,
 				87A232542924065900B5EC64 /* GreetingCardContent.swift in Sources */,
 				87A232602924120E00B5EC64 /* GreetingsDeck.Expanded.swift in Sources */,
+				87A2326929257CB000B5EC64 /* Expander.swift in Sources */,
 				87A232502923972D00B5EC64 /* DummyCard.swift in Sources */,
 				87A2325A2924117D00B5EC64 /* Greeting.swift in Sources */,
 				87A232562924095600B5EC64 /* BouncyButtonStyle.swift in Sources */,

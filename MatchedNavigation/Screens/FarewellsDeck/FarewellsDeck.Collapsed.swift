@@ -26,7 +26,7 @@ extension FarewellsDeck {
     }
     
     struct Collapsed_Previews: PreviewProvider {
-        static let farewells: [Farewell] = [Farewell(title: "Goodbye", description: "...")]
+        static let farewells: [Farewell] = [Farewell(title: "Goodbye", description: "...", details: "...")]
         
         static var previews: some View {
             Collapsed(items: farewells, tapAction: {})

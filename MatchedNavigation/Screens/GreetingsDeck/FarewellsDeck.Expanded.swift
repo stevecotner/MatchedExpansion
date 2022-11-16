@@ -58,8 +58,12 @@ extension FarewellsDeck {
                                 transitionWrapperID: "FarewellsExpandedItem\(farewell.id)",
                                 isActive: binding,
                                 transition: .split,
-                                destination: {
-                                    FarewellDetails(farewell: farewell)
+                                showsXButton: false,
+                                destination: { collapseAction in
+                                    FarewellDetails(
+                                        farewell: farewell,
+                                        collapseAction: collapseAction
+                                    )
                                 })
                         }
                     }
@@ -70,7 +74,7 @@ extension FarewellsDeck {
     
     struct Expanded_Previews: PreviewProvider {
         static var previews: some View {
-            Expanded(items: [Farewell(title: "Goodbye", description: "...")])
+            Expanded(items: [Farewell(title: "Goodbye", description: "...", details: "...")])
         }
     }
 }

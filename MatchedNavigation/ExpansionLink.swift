@@ -7,18 +7,20 @@
 
 import SwiftUI
 
+typealias CollapseAction = () -> Void
+
 struct ExpansionLink<Content>: View where Content: View {
     let viewMakerID: String
     let transitionWrapperID: String
     
     @Binding var isActive: Bool
     var transition: ExpansionTransition
-    let showsX = true
+    var showsXButton = true
     
     @EnvironmentObject var expander: Expander
     
     // The view we will "expand" to.
-    var destination: () -> Content
+    var destination: (@escaping CollapseAction) -> Content
     
     var body: some View {
         Rectangle()
@@ -29,15 +31,16 @@ struct ExpansionLink<Content>: View where Content: View {
                     let viewMaker = ExpansionLinkViewMaker(
                         id: viewMakerID,
                         transitionWrapperID: transitionWrapperID,
-                        showsX: showsX,
+                        showsXButton: showsXButton,
                         transition: transition,
                         resetActive: { isActive = false },
+                        removeSelfFromViewMakers: expander.remove,
                         content: destination
                     )
                     
-                    expander.add?(viewMaker.typeErasedViewMaker)
+                    expander.add(viewMaker.typeErasedViewMaker)
                 } else {
-                    expander.remove?(viewMakerID)
+                    expander.remove(viewMakerID)
                 }
             }
     }
@@ -65,7 +68,7 @@ struct ExpansionLink_Previews: PreviewProvider {
             transitionWrapperID: "example",
             isActive: .constant(true),
             transition: .split,
-            destination: {
+            destination: { _ in
                 Text("Expanded Text")
             }
         )
