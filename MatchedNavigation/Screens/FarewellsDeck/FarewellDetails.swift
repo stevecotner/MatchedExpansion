@@ -12,22 +12,22 @@ struct FarewellDetails: View {
     let collapseAction: () -> Void
     
     @State var shouldShowDetails = false
-    let titleFontSize: CGFloat = 28.0
-    let subtitleFontSize: CGFloat = 22.0
+    let titleFontSize: CGFloat = 22.0
+    let subtitleFontSize: CGFloat = 20.0
     
     var body: some View {
         ExpansionNamespaceReader { namespace in
             ScrollView {
                 VStack(alignment: .leading) {
                     HStack {
-                        VStack(alignment: .leading, spacing: 5) {
+                        VStack(alignment: .leading, spacing: 7) {
                             HStack {
                                 Text(farewell.title).bold()
 
                                 Spacer(minLength: 0)
                             }
                             .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
-                            .font(.system(size: titleFontSize))
+                            .font(.system(size: titleFontSize)).bold()
                             
                             HStack {
                                 Text(farewell.description)
@@ -54,8 +54,6 @@ struct FarewellDetails: View {
             .frame(maxHeight: .infinity)
             .safeAreaInset(edge: .bottom, content: {
                 Button {
-                    shouldShowDetails = false
-                    
                     collapseAction()
                 } label: {
                     Text("Done")
@@ -70,8 +68,8 @@ struct FarewellDetails: View {
                     .matchedGeometryEffect(id: "Farewells" + farewell.id + "card" + "background", in: namespace)
             )
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) {
-                    withAnimation(.easeIn) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                    withAnimation(.linear.delay(0.2)) {
                         shouldShowDetails = true
                     }
                 }
@@ -85,9 +83,18 @@ struct FarewellDetails: View {
             if shouldShowDetails {
                 Divider()
                     .padding(.bottom, 12)
-                Text("Details").bold()
+                
+                HStack {
+                    Text("Details").bold()
+                    Spacer(minLength: 0)
+                }
                     .padding(.bottom, 4)
-                Text(farewell.details)
+                
+                HStack {
+                    Text(farewell.details)
+                    Spacer(minLength: 0)
+                }
+                    .fixedSize(horizontal: false, vertical: true)
             }
         }
     }
