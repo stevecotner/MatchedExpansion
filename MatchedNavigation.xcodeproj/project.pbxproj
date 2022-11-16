@@ -37,6 +37,7 @@
 		87A232602924120E00B5EC64 /* GreetingsDeck.Expanded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2325F2924120E00B5EC64 /* GreetingsDeck.Expanded.swift */; };
 		87A232612924125600B5EC64 /* FarewellsDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232582924117100B5EC64 /* FarewellsDeck.swift */; };
 		87A232632924125F00B5EC64 /* FarewellCardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A232622924125F00B5EC64 /* FarewellCardContent.swift */; };
+		87A23265292544EA00B5EC64 /* FarewellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A23264292544EA00B5EC64 /* FarewellDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		87A2325D292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellsDeck.Collapsed.swift; sourceTree = "<group>"; };
 		87A2325F2924120E00B5EC64 /* GreetingsDeck.Expanded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GreetingsDeck.Expanded.swift; path = ../FarewellsDeck/GreetingsDeck.Expanded.swift; sourceTree = "<group>"; };
 		87A232622924125F00B5EC64 /* FarewellCardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellCardContent.swift; sourceTree = "<group>"; };
+		87A23264292544EA00B5EC64 /* FarewellDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarewellDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				87A2325D292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift */,
 				87A232402923894300B5EC64 /* FarewellsDeck.Expanded.swift */,
 				87A232622924125F00B5EC64 /* FarewellCardContent.swift */,
+				87A23264292544EA00B5EC64 /* FarewellDetails.swift */,
 			);
 			path = FarewellsDeck;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				87A232322923535500B5EC64 /* ExpansionLink.swift in Sources */,
 				87A232452923896C00B5EC64 /* CollapsedCardDeck.swift in Sources */,
 				87A2325229239BE500B5EC64 /* Card.swift in Sources */,
+				87A23265292544EA00B5EC64 /* FarewellDetails.swift in Sources */,
 				87A2320629234CC500B5EC64 /* MatchedNavigationApp.swift in Sources */,
 				87A232412923894300B5EC64 /* FarewellsDeck.Expanded.swift in Sources */,
 				87A2325E292411AD00B5EC64 /* FarewellsDeck.Collapsed.swift in Sources */,

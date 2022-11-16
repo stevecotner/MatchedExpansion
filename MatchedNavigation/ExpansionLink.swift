@@ -17,7 +17,8 @@ struct ExpansionLink<Content>: View where Content: View {
     
     @EnvironmentObject var expander: Expander
     
-    var content: () -> Content
+    // The view we will "expand" to.
+    var destination: () -> Content
     
     var body: some View {
         Rectangle()
@@ -35,7 +36,7 @@ struct ExpansionLink<Content>: View where Content: View {
                         showsX: showsX,
                         transition: transition,
                         resetActive: { isActive = false },
-                        content: content
+                        content: destination
                     )
                     
                     expander.add?(viewMaker.typeErasedViewMaker)
@@ -67,9 +68,10 @@ struct ExpansionLink_Previews: PreviewProvider {
             viewMakerID: "example",
             transitionWrapperID: "example",
             isActive: .constant(true),
-            transition: .split
-        ) {
+            transition: .split,
+            destination: {
                 Text("Expanded Text")
             }
+        )
     }
 }

@@ -24,6 +24,14 @@ extension FarewellsDeck {
                         itemToExpand = item
                     },
                     cardContent: { farewell in
+                        /*
+                         Every card can expand to show another screen
+                         Because of this, the cardContent is a little busy.
+                         Besides showing `FarewellCardContent(...)`, we also include:
+                         1. A smart binding which can evaluate itemToExpand and compare it to the item's farewell.id
+                         2. An ExpansionLink that goes to the new screen.
+                         */
+                        
                         VStack(spacing: 0) {
                             FarewellCardContent(farewell: farewell)
                             
@@ -40,38 +48,21 @@ extension FarewellsDeck {
                                 }
                             )
                             
-                            // Each card has its own ExpansionLink.
+                            // Each card has its own ExpansionLink
+                            // (as opposed to making a single link further up in the FarewellsDeck.Expanded view).
                             // This is because we need to specify the transitionWrapperID *before* we tap the item,
                             // otherwise the expand and collapse animations won't work correctly.
-                            ExpansionNamespaceReader { namespace in
-                                ExpansionLink(
-                                    viewMakerID: "FarewellsExpandedItem\(farewell.id)",
-                                    transitionWrapperID: "FarewellsExpandedItem\(farewell.id)",
-                                    isActive: binding,
-                                    transition: .split,
-                                    content: {
-                                        HStack {
-                                            VStack(alignment: .leading) {
-                                                Text(farewell.title).bold()
-                                                    .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
-                                                
-                                                Text(farewell.description)
-                                                    .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
-                                                
-                                                Spacer()
-                                            }
-                                            Spacer()
-                                        }
-                                        .padding(20)
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 12)
-                                                .fill(Color.white)
-                                                .shadow(color: .black.opacity(0.01), radius: 18, x: 0, y: 3)
-                                                .edgesIgnoringSafeArea([.top, .bottom])
-                                                .matchedGeometryEffect(id: "Farewells" + farewell.id + "card" + "background", in: namespace)
-                                        )
-                                    })
-                            }
+                            // Trying to set that link and then trigger the animation creates insurmountable timing issues.
+                            // It's because we make so many ExpansionLinks (one for each farewell item)
+                            // that we need to get clever about the binding up above.
+                            ExpansionLink(
+                                viewMakerID: "FarewellsExpandedItem\(farewell.id)",
+                                transitionWrapperID: "FarewellsExpandedItem\(farewell.id)",
+                                isActive: binding,
+                                transition: .split,
+                                destination: {
+                                    FarewellDetails(farewell: farewell)
+                                })
                         }
                     }
                 )

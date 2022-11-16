@@ -77,19 +77,21 @@ struct ListOfCardDecks: View {
                     viewMakerID: "greetingsdeck",
                     transitionWrapperID: "greetingsdeck",
                     isActive: $isGreetingsDeckExpanded,
-                    transition: .fade)
-                {
-                    GreetingsDeck.Expanded(items: greetings)
-                }
+                    transition: .fade,
+                    destination: {
+                        GreetingsDeck.Expanded(items: greetings)
+                    }
+                )
                 
                 ExpansionLink(
                     viewMakerID: "farewellsdeck",
                     transitionWrapperID: "farewellsdeck",
                     isActive: $isFarewellsDeckExpanded,
-                    transition: .split)
-                {
-                    FarewellsDeck.Expanded(items: farewells)
-                }
+                    transition: .split,
+                    destination: {
+                        FarewellsDeck.Expanded(items: farewells)
+                    }
+                )
             }
         }
     }

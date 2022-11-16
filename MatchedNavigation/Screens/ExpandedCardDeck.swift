@@ -33,6 +33,8 @@ struct ExpandedCardDeck<Item: CardItem, CardContent>: View where CardContent: Vi
                         .padding(.horizontal, 20)
                     
                     ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                        // Each card is in a transition wrapper,
+                        // Because each card will be able to expand to yet another view.
                         TransitionWrapper(id: transitionWrapperIDPrefix + item.id) {
                             Button {
                                 cardTapAction(item)
