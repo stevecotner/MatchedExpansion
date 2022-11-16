@@ -41,13 +41,13 @@ struct ExpansionView<Content>: View where Content: View {
                                         Image(systemName: "xmark.circle.fill")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 23)
+                                            .frame(width: 26)
                                             .foregroundColor(.black)
                                     }
                                 }
                                 Spacer()
                             }
-                            .padding(.horizontal, 10)
+                            .padding(.horizontal, 12)
                         }
                     }
                     .opacity(index < expander.viewMakers.count - 1 ? 0 : 1)

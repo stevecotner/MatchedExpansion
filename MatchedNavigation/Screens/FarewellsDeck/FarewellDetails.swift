@@ -12,19 +12,21 @@ struct FarewellDetails: View {
     
     var body: some View {
         ExpansionNamespaceReader { namespace in
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(farewell.title).bold()
-                        .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
-                    
-                    Text(farewell.description)
-                        .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
-                    
+            ScrollView {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(farewell.title).bold()
+                            .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
+                        
+                        Text(farewell.description)
+                            .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
+                        
+                        Spacer()
+                    }
                     Spacer()
                 }
-                Spacer()
+                .padding(20)
             }
-            .padding(20)
             .background(
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color.white)
