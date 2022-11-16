@@ -15,7 +15,7 @@ struct DummyCard: View {
         ExpansionNamespaceReader { namespace in
             Rectangle()
                 .fill(Color.clear)
-                .frame(height: 50)
+                .frame(height: 20) // Dummy cards aren't very tall!
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 20)
                 .padding(.top, 22)

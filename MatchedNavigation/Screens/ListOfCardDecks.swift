@@ -37,6 +37,9 @@ struct ListOfCardDecks: View {
             ExpansionNamespaceReader { namespace in
                 ScrollView {
                     VStack(alignment: .leading, spacing: 24) {
+                        Spacer()
+                            .frame(height: 10)
+                        
                         Text("Card Decks")
                             .font(.title).bold()
                         
@@ -77,7 +80,7 @@ struct ListOfCardDecks: View {
                     viewMakerID: "greetingsdeck",
                     transitionWrapperID: "greetingsdeck",
                     isActive: $isGreetingsDeckExpanded,
-                    transition: .fade,
+                    transition: .split,
                     destination: {
                         GreetingsDeck.Expanded(items: greetings)
                     }

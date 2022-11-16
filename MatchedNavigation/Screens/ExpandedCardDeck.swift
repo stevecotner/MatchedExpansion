@@ -33,18 +33,23 @@ struct ExpandedCardDeck<Item: CardItem, CardContent>: View where CardContent: Vi
                         .padding(.horizontal, 20)
                     
                     ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
-                        // Each card is in a transition wrapper,
-                        // Because each card will be able to expand to yet another view.
-                        // So we need to remove this view from the hierarchy when its mate is expanded.
-                        // (That's what TransitionWrappers are for!)
+                        // Each card is in a transition wrapper.
+                        // That's just in case we want to expand to yet another view.
+                        // TransitionWrappers remove their content from the hierarchy when the content's mate is expanded.
                         TransitionWrapper(id: cardTransitionWrapperIDPrefix + item.id) {
                             Button {
                                 cardTapAction(item)
                             } label: {
-                                Card(id: id + item.id, content: { cardContent(item) })
+                                Card(
+                                    id: id + item.id,
+                                    content: {
+                                        VStack(alignment: .leading) {
+                                            cardContent(item)
+                                        }
+                                    })
                                     .matchedGeometryEffect(id: id + "card" + item.id, in: namespace)
                                     .padding(.horizontal, 20)
-                                    
+                                
                             }
                             .buttonStyle(BouncyButtonStyle())
                             .accentColor(.black)

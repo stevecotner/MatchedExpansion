@@ -25,10 +25,6 @@ struct ExpansionLink<Content>: View where Content: View {
             .frame(width: 0.001, height: 0.001)
             .background(Color.black.opacity(0.001))
             .onChange(of: $isActive.wrappedValue) { active in
-                print("on change of isActive")
-                print("ExpansionLink id: \(viewMakerID)")
-                print("ExpansionLink transitionWrapperID: \(transitionWrapperID)")
-                print("transition: \(transition)")
                 if isActive {
                     let viewMaker = ExpansionLinkViewMaker(
                         id: viewMakerID,

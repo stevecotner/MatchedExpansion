@@ -30,7 +30,6 @@ struct TransitionWrapper<Content>: View where Content: View {
             if expander.activeTransitionWrapperIDs.contains(id) {
                 if expander.activeSplitTransitionWrapperIDs.contains(id) {
                     // If it's a split transition, add a full-screen rectangle where the view used to be.
-                    let _ = print("activeTransitionWrapperIDs contains id \(id)")
                     Rectangle()
                         .fill(Color.white.opacity(0.001))
                         .frame(width: 1, height: expander.totalHeight != nil ? expander.totalHeight! * 2 : 0.001)
