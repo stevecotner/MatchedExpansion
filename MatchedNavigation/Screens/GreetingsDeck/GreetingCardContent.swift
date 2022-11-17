@@ -13,10 +13,19 @@ struct GreetingCardContent: View {
     var body: some View {
         ExpansionNamespaceReader { namespace in
             VStack(alignment: .leading) {
-                Text(greeting.title).bold()
-                    .matchedGeometryEffect(id: "greetings" + "cardtitle" + greeting.id, in: namespace)
-                Text(greeting.description)
-                    .matchedGeometryEffect(id: "greetings" + "carddescription" + greeting.id, in: namespace)
+                HStack {
+                    Text(greeting.title)
+                    Spacer(minLength: 0)
+                }
+                .matchedGeometryEffect(id: "greetings" + "cardtitle" + greeting.id, in: namespace)
+                .font(.system(size: 18, weight: .semibold))
+                
+                HStack {
+                    Text(greeting.description)
+                    Spacer(minLength: 0)
+                }
+                .matchedGeometryEffect(id: "greetings" + "carddescription" + greeting.id, in: namespace)
+                    .font(.system(size: 16.36, weight: .regular))
             }
         }
     }

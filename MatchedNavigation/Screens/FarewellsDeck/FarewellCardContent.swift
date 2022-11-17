@@ -12,19 +12,28 @@ struct FarewellCardContent: View {
     
     var body: some View {
         ExpansionNamespaceReader { namespace in
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(farewell.title).bold()
-//                        .fixedSize(horizontal: false, vertical: true)
-                    Spacer(minLength: 0)
-                }
-                .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
-                
-                HStack {
-                    Text(farewell.description)
-                    Spacer(minLength: 0)
-                }
+            HStack {
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack {
+                        Text(farewell.title)
+                        Spacer(minLength: 0)
+                    }
+                    .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
+                    .font(.system(size: 18, weight: .semibold))
+                    
+                    HStack {
+                        Text(farewell.description)
+                        Spacer(minLength: 0)
+                    }
                     .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
+                    .font(.system(size: 16.36, weight: .regular))
+                }
+                
+                Spacer()
+                Rectangle()
+                    .fill(.orange)
+                    .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
+                    .frame(width: 50, height: 50)
             }
             .matchedGeometryEffect(id: "farewells" + "cardcontent" + farewell.id, in: namespace)
         }

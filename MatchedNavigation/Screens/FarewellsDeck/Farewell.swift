@@ -12,4 +12,5 @@ struct Farewell: CardItem {
     let title: String
     let description: String
     let details: String
+    var imageName: String?
 }

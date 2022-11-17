@@ -22,19 +22,18 @@ struct FarewellDetails: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 7) {
                             HStack {
-                                Text(farewell.title).bold()
-
+                                Text(farewell.title)
                                 Spacer(minLength: 0)
                             }
                             .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
-                            .font(.system(size: titleFontSize)).bold()
+                            .font(.system(size: 20.0, weight: .semibold))
                             
                             HStack {
                                 Text(farewell.description)
                                 Spacer(minLength: 0)
                             }
                             .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
-                            .font(.system(size: subtitleFontSize))
+                            .font(.system(size: 18.18, weight: .regular))
                         }
                         
                         Spacer()
@@ -42,6 +41,17 @@ struct FarewellDetails: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 12)
                     .padding(.top, 15)
+                    
+                    Divider()
+                        .padding(.bottom, 16)
+                    
+                    Rectangle()
+                        .fill(.orange)
+                        .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 200)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 20)
                     
                     details()
                         .padding(.horizontal, 20)
@@ -68,11 +78,11 @@ struct FarewellDetails: View {
                     .matchedGeometryEffect(id: "Farewells" + farewell.id + "card" + "background", in: namespace)
             )
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                    withAnimation(.linear.delay(0.2)) {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                    withAnimation(.linear.delay(0.7)) {
                         shouldShowDetails = true
                     }
-                }
+//                }
             }
             
         }
@@ -80,23 +90,18 @@ struct FarewellDetails: View {
     
     func details() -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            if shouldShowDetails {
-                Divider()
-                    .padding(.bottom, 12)
-                
-                HStack {
-                    Text("Details").bold()
-                    Spacer(minLength: 0)
-                }
-                    .padding(.bottom, 4)
-                
-                HStack {
-                    Text(farewell.details)
-                    Spacer(minLength: 0)
-                }
-                    .fixedSize(horizontal: false, vertical: true)
+            HStack {
+                Text("Details").bold()
+                Spacer(minLength: 0)
+            }
+                .padding(.bottom, 4)
+            
+            HStack {
+                Text(farewell.details)
+                Spacer(minLength: 0)
             }
         }
+        .opacity(shouldShowDetails ? 1 : 0)
     }
 }
 
