@@ -16,75 +16,79 @@ struct FarewellDetails: View {
     let subtitleFontSize: CGFloat = 20.0
     
     var body: some View {
-        ExpansionNamespaceReader { namespace in
-            ScrollView {
-                VStack(alignment: .leading) {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 7) {
-                            HStack {
-                                Text(farewell.title)
-                                Spacer(minLength: 0)
+        GeometryReader { geometry in
+            
+
+            ExpansionNamespaceReader { namespace in
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            VStack(alignment: .leading, spacing: 7) {
+                                HStack {
+                                    Text(farewell.title)
+                                    Spacer(minLength: 0)
+                                }
+                                .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
+                                .font(.system(size: 20.0, weight: .semibold))
+                                
+                                HStack {
+                                    Text(farewell.description)
+                                    Spacer(minLength: 0)
+                                }
+                                .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
+                                .font(.system(size: 18.18, weight: .regular))
                             }
-                            .matchedGeometryEffect(id: "farewells" + "cardtitle" + farewell.id, in: namespace)
-                            .font(.system(size: 20.0, weight: .semibold))
                             
-                            HStack {
-                                Text(farewell.description)
-                                Spacer(minLength: 0)
-                            }
-                            .matchedGeometryEffect(id: "farewells" + "carddescription" + farewell.id, in: namespace)
-                            .font(.system(size: 18.18, weight: .regular))
+                            Spacer()
                         }
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 12)
+                        .padding(.top, 15)
+                        
+                        Divider()
+                            .padding(.bottom, 16)
+                        
+                        // Image
+                        Image(farewell.imageName ?? "")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
+                            .frame(width: geometry.size.width - 40, height: geometry.size.width - 40)
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, 20)
+                        
+                        details()
+                            .padding(.horizontal, 20)
                         
                         Spacer()
+                        
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 12)
-                    .padding(.top, 15)
-                    
-                    Divider()
-                        .padding(.bottom, 16)
-                    
-                    Rectangle()
-                        .fill(.orange)
-                        .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 200)
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 20)
-                    
-                    details()
-                        .padding(.horizontal, 20)
-                    
-                    Spacer()
-                    
+                    .matchedGeometryEffect(id: "farewells" + "cardcontent" + farewell.id, in: namespace)
                 }
-                .matchedGeometryEffect(id: "farewells" + "cardcontent" + farewell.id, in: namespace)
-            }
-            .frame(maxHeight: .infinity)
-            .safeAreaInset(edge: .bottom, content: {
-                Button {
-                    collapseAction()
-                } label: {
-                    Text("Done")
-                }
-                .buttonStyle(PillButtonStyle())
-            })
-            .background(
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.white)
-                    .shadow(color: .black.opacity(0.01), radius: 18, x: 0, y: 3)
-                    .edgesIgnoringSafeArea([.top, .bottom])
-                    .matchedGeometryEffect(id: "Farewells" + farewell.id + "card" + "background", in: namespace)
-            )
-            .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                .frame(maxHeight: .infinity)
+                .safeAreaInset(edge: .bottom, content: {
+                    Button {
+                        collapseAction()
+                    } label: {
+                        Text("Done")
+                    }
+                    .buttonStyle(PillButtonStyle())
+                })
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.white)
+                        .shadow(color: .black.opacity(0.01), radius: 18, x: 0, y: 3)
+                        .edgesIgnoringSafeArea([.top, .bottom])
+                        .matchedGeometryEffect(id: "Farewells" + farewell.id + "card" + "background", in: namespace)
+                )
+                .onAppear {
+                    //                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                     withAnimation(.linear.delay(0.7)) {
                         shouldShowDetails = true
                     }
-//                }
+                    //                }
+                }
             }
-            
         }
     }
     

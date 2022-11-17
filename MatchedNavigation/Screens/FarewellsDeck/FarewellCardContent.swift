@@ -30,10 +30,11 @@ struct FarewellCardContent: View {
                 }
                 
                 Spacer()
-                Rectangle()
-                    .fill(.orange)
+                Image(farewell.imageName ?? "")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
-                    .frame(width: 50, height: 50)
+                    .frame(width: 55, height: 55)
             }
             .matchedGeometryEffect(id: "farewells" + "cardcontent" + farewell.id, in: namespace)
         }

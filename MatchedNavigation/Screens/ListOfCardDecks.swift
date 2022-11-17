@@ -23,27 +23,32 @@ struct ListOfCardDecks: View {
         Farewell(
             title: "Goodbye",
             description: "A formal farewell.",
-            details: "Used to express good wishes when parting or at the end of a conversation"
+            details: "Used to express good wishes when parting or at the end of a conversation",
+            imageName: "soundofmusic"
         ),
         Farewell(
             title: "Bye",
             description: "A somewhat casual farewell.",
-            details: "Short for goodbye"
+            details: "Short for goodbye",
+            imageName: "byefelicia"
         ),
         Farewell(
             title: "See ya",
             description: "A very casual farewell.",
-            details: "Said when parting from someone"
+            details: "Said when parting from someone",
+            imageName: "ralph"
         ),
         Farewell(
             title: "Peace",
             description: "A too casual farewell.",
-            details: "Used to express good wishes on parting"
+            details: "Used to express good wishes on parting",
+            imageName: "ringo"
         ),
         Farewell(
             title: "Adiós",
             description: "A Spanish farewell.",
-            details: "Spanish adiós, from a ‘to’ + Dios ‘God’; compare with adieu."
+            details: "Spanish adiós, from a ‘to’ + Dios ‘God’; compare with adieu.",
+            imageName: "clint"
         ),
         Farewell(
             title: "Ciao",
@@ -58,7 +63,8 @@ struct ListOfCardDecks: View {
         Farewell(
             title: "Hasta la vista, baby",
             description: "A Terminator farewell.",
-            details: "Said by Arnold Schwarzenegger's character The Terminator"
+            details: "Said by Arnold Schwarzenegger's character the Terminator",
+            imageName: "terminator"
         ),
         Farewell(
             title: "Yippee Ki-Yay",
