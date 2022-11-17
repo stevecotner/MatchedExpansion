@@ -12,7 +12,7 @@ struct GreetingCardContent: View {
     
     var body: some View {
         ExpansionNamespaceReader { namespace in
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 3) {
                 HStack {
                     Text(greeting.title)
                     Spacer(minLength: 0)

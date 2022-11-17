@@ -13,7 +13,7 @@ struct FarewellCardContent: View {
     var body: some View {
         ExpansionNamespaceReader { namespace in
             HStack {
-                VStack(alignment: .leading, spacing: 2) {
+                VStack(alignment: .leading, spacing: 3) {
                     HStack {
                         Text(farewell.title)
                         Spacer(minLength: 0)
@@ -34,7 +34,7 @@ struct FarewellCardContent: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
-                    .frame(width: 55, height: 55)
+                    .frame(width: 52, height: 52)
                     .mask(
                         RoundedRectangle(cornerRadius: 5)
                             .matchedGeometryEffect(id: "farewells" + "imagemask" + farewell.id, in: namespace)
