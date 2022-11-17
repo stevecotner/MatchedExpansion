@@ -86,11 +86,11 @@ struct FarewellDetails: View {
                         .matchedGeometryEffect(id: "Farewells" + farewell.id + "card" + "background", in: namespace)
                 )
                 .onAppear {
-                    //                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                    withAnimation(.linear.delay(0.7)) {
-                        shouldShowDetails = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                        withAnimation(.linear) {
+                            shouldShowDetails = true
+                        }
                     }
-                    //                }
                 }
             }
         }
@@ -98,18 +98,20 @@ struct FarewellDetails: View {
     
     func details() -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text("Details").bold()
-                Spacer(minLength: 0)
-            }
+            if shouldShowDetails {
+                HStack {
+                    Text("Details").bold()
+                    Spacer(minLength: 0)
+                }
                 .padding(.bottom, 4)
-            
-            HStack {
-                Text(farewell.details)
-                Spacer(minLength: 0)
+                
+                HStack {
+                    Text(farewell.details)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Spacer(minLength: 0)
+                }
             }
         }
-        .opacity(shouldShowDetails ? 1 : 0)
     }
 }
 
