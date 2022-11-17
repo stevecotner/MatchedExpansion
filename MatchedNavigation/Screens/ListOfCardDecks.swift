@@ -51,14 +51,10 @@ struct ListOfCardDecks: View {
             imageName: "clint"
         ),
         Farewell(
-            title: "Ciao",
-            description: "An Italian farewell.",
-            details: "Italian, dialect alteration of schiavo ‘(I am your) slave’, from medieval Latin sclavus ‘slave’."
-        ),
-        Farewell(
             title: "Aloha",
             description: "A Hawaiian farewell.",
-            details: "A Hawaiian word used when greeting or parting from someone"
+            details: "A Hawaiian word used when greeting or parting from someone",
+            imageName: "hawaii50"
         ),
         Farewell(
             title: "Hasta la vista, baby",
@@ -69,12 +65,14 @@ struct ListOfCardDecks: View {
         Farewell(
             title: "Yippee Ki-Yay",
             description: "A Die Hard farewell.",
-            details: "Said by Bruce Willis's character John McClane"
+            details: "Said by Bruce Willis's character John McClane",
+            imageName: "diehard"
         ),
         Farewell(
             title: "Allons-y",
             description: "A Dr. Who farewell.",
-            details: "Said by the tenth Dr. Who, played by David Tennant"
+            details: "Said by the tenth Dr. Who, played by David Tennant",
+            imageName: "drwho"
         )
     ]
     
