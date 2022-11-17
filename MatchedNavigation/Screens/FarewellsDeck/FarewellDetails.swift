@@ -54,6 +54,10 @@ struct FarewellDetails: View {
                             .aspectRatio(contentMode: .fit)
                             .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
                             .frame(width: geometry.size.width - 40, height: geometry.size.width - 40)
+                            .mask(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .matchedGeometryEffect(id: "farewells" + "imagemask" + farewell.id, in: namespace)
+                            )
                             .padding(.horizontal, 20)
                             .padding(.bottom, 20)
                         

@@ -35,6 +35,10 @@ struct FarewellCardContent: View {
                     .aspectRatio(contentMode: .fit)
                     .matchedGeometryEffect(id: "farewells" + "image" + farewell.id, in: namespace)
                     .frame(width: 55, height: 55)
+                    .mask(
+                        RoundedRectangle(cornerRadius: 5)
+                            .matchedGeometryEffect(id: "farewells" + "imagemask" + farewell.id, in: namespace)
+                    )
             }
             .matchedGeometryEffect(id: "farewells" + "cardcontent" + farewell.id, in: namespace)
         }
