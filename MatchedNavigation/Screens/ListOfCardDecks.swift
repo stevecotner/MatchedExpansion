@@ -78,46 +78,44 @@ struct ListOfCardDecks: View {
     
     var body: some View {
         ZStack {
-            ExpansionNamespaceReader { namespace in
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
-                        Spacer()
-                            .frame(height: 10)
-                        
-                        Text("Card Decks")
-                            .font(.title).bold()
-                        
-                        BodyText("This is a list of card decks and other elements. When the user taps on a card deck, the deck will unfold to take over the screen. All other elements will disappear above and below the unfolding card deck.")
-                        
-                        TransitionWrapper(id: "greetingsdeck") {
-                            GreetingsDeck.Collapsed(
-                                items: greetings,
-                                tapAction: { isGreetingsDeckExpanded = true }
-                            )
-                        }
-                        .padding(.bottom, 16)
-                        
-                        BodyText("The expanded card deck is a completely different view from the collapsed card deck. The animated transition from one view to the other relies on the matchedGeometryEffect. This separation of concerns lets the programmer make choices for each view without having to think about the state of a parent or child.")
-                        
-                        TransitionWrapper(id: "farewellsdeck") {
-                            FarewellsDeck.Collapsed(
-                                items: farewells,
-                                tapAction: { isFarewellsDeckExpanded = true }
-                            )
-                        }
-                        .padding(.bottom, 16)
-                        
-                        BodyText("The programmer is also able to expand to as many levels as they like: each view can expand to yet another view. So it's a composable pattern. But the code still needs to be cleaned up a little bit.")
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 20)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    Spacer()
+                        .frame(height: 10)
                     
+                    Text("Card Decks")
+                        .font(.title).bold()
+                    
+                    BodyText("This is a list of card decks and other elements. When the user taps on a card deck, the deck will unfold to take over the screen. All other elements will disappear above and below the unfolding card deck.")
+                    
+                    TransitionWrapper(id: "greetingsdeck") {
+                        GreetingsDeck.Collapsed(
+                            items: greetings,
+                            tapAction: { isGreetingsDeckExpanded = true }
+                        )
+                    }
+                    .padding(.bottom, 16)
+                    
+                    BodyText("The expanded card deck is a completely different view from the collapsed card deck. The animated transition from one view to the other relies on the matchedGeometryEffect. This separation of concerns lets the programmer make choices for each view without having to think about the state of a parent or child.")
+                    
+                    TransitionWrapper(id: "farewellsdeck") {
+                        FarewellsDeck.Collapsed(
+                            items: farewells,
+                            tapAction: { isFarewellsDeckExpanded = true }
+                        )
+                    }
+                    .padding(.bottom, 16)
+                    
+                    BodyText("The programmer is also able to expand to as many levels as they like: each view can expand to yet another view. So it's a composable pattern. But the code still needs to be cleaned up a little bit.")
+                    
+                    Spacer()
                 }
+                .padding(.horizontal, 20)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.init(white: 0.96))
+                
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.init(white: 0.96))
             
             Group {
                 ExpansionLink(
@@ -152,8 +150,6 @@ struct ListOfCardDecks: View {
 }
 
 struct ListOfCardDecks_Previews: PreviewProvider {
-    @Namespace static var namespace
-    
     static var previews: some View {
         ListOfCardDecks()
     }

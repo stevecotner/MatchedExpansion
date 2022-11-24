@@ -48,7 +48,7 @@ struct CollapsedCardDeck<Item: CardItem, CardContent>: View where CardContent: V
                     ForEach(1..<items.count, id: \.self) { index in
                         let item = items[index]
                         
-                        DummyCard(id: id + item.id)
+                        DummyCard(id: id + item.id, shouldShowShadow: shadow(for: index))
                             .matchedGeometryEffect(id: id + "card" + item.id, in: namespace)
                             .padding(.horizontal, padding(for: index))
                             .offset(y: offset(for: index))
@@ -56,24 +56,6 @@ struct CollapsedCardDeck<Item: CardItem, CardContent>: View where CardContent: V
                             .zIndex(Double(items.count - index))
                     }
                 }
-                
-//                // 3rd card
-//                if items.count > 2, let third = items[2] {
-//                    DummyCard(id: id + third.id)
-//                        .matchedGeometryEffect(id: id + "card" + third.id, in: namespace)
-//                        .padding(.horizontal, 20)
-//                        .offset(y: 20)
-//                        .zIndex(Double(items.count - 2))
-//                }
-//
-//                // 2nd card
-//                if items.count > 1, let second = items[1] {
-//                    DummyCard(id: id + second.id)
-//                        .matchedGeometryEffect(id: id + "card" + second.id, in: namespace)
-//                        .padding(.horizontal, 10)
-//                        .offset(y: 10)
-//                        .zIndex(Double(items.count - 1))
-//                }
                 
                 // Top card
                 if let first = items.first {
@@ -92,6 +74,10 @@ struct CollapsedCardDeck<Item: CardItem, CardContent>: View where CardContent: V
         }
     }
     
+    func shadow(for index: Int) -> Bool {
+        index < 3 ? true : false
+    }
+    
     func padding(for index: Int) -> CGFloat {
         CGFloat((min(6, index)) * 10)
     }
@@ -101,7 +87,7 @@ struct CollapsedCardDeck<Item: CardItem, CardContent>: View where CardContent: V
     }
     
     func opacity(for index: Int) -> CGFloat {
-        index < 3 ? 1 : 0.001
+        index < 4 ? 1 : 0.001
     }
 }
 

@@ -10,6 +10,7 @@ import SwiftUI
 struct DummyCard: View {
     /// used for matchedGeometryEffect
     let id: String
+    let shouldShowShadow: Bool
     
     var body: some View {
         ExpansionNamespaceReader { namespace in
@@ -23,7 +24,7 @@ struct DummyCard: View {
                 .background(
                     RoundedRectangle(cornerRadius: 12)
                         .fill(Color.white)
-                        .shadow(color: .black.opacity(0.2), radius: 18, x: 0, y: 3)
+                        .shadow(color: .black.opacity(shouldShowShadow ? 0.2 : 0), radius: 18, x: 0, y: 3)
                         .matchedGeometryEffect(id: id + "card" + "background", in: namespace)
                 )
         }
@@ -32,6 +33,6 @@ struct DummyCard: View {
 
 struct DummyCard_Previews: PreviewProvider {
     static var previews: some View {
-        DummyCard(id: "hi")
+        DummyCard(id: "hi", shouldShowShadow: true)
     }
 }

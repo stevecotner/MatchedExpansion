@@ -17,8 +17,6 @@ struct FarewellDetails: View {
     
     var body: some View {
         GeometryReader { geometry in
-            
-
             ExpansionNamespaceReader { namespace in
                 ScrollView {
                     VStack(alignment: .leading) {
